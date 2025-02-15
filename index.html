@@ -9,7 +9,51 @@
     <title>Piedra, papel o tijera</title>
 </head>
 <body>
-    
+    <header>
+        <h1>Piedra, papel o tijera</h1>
+        <h2>con HTML, CSS y JavaScript</h2>
+    </header>
+
+    <main>
+        <section class="contador">
+            <h3>El primero en llegar a 5 puntos gana.</h3>
+            <article class="contador">
+                <p id="jugador">Jugador</p>
+                <p id="contador">1-0</p>
+                <p id="computadora">Computadora</p>
+            </article>
+        </section>
+
+        <section class="opciones">
+            <p>Elige tu arma para el próximo turno</p>
+            <div class="opciones">
+                <button id="piedra" class="btn btn-primary">Piedra</button>
+                <button id="papel" class="btn btn-primary">Papel</button>
+                <button id="tijera" class="btn btn-primary">Tijera</button>
+            </div>
+        </section>
+        
+        <section class="resultados">
+            <p>Usaste *papel*</p>
+            <p>y la computadora usó *tijera*</p>
+            <p>¡La *computadora* ganó un punto! </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contenidoFooter">
+            <p>&copy; 2025 Juego Piedra, Papel o Tijera</p>
+            <p>Desarrollado por:</p>
+            <nav>
+                <a href="https://github.com/ReynerLc" target="_blank"><i class="bi bi-github"></i>Reyner L.</a>
+                <a href="https://github.com/NicoLop-stack" target="_blank"><i class="bi bi-github"></i>Nicol L.</a>
+                <a href="https://github.com/LerisHuertas" target="_blank"><i class="bi bi-github"></i>Leris H.</a>
+                <a href="https://github.com/Evelyn2503" target="_blank"><i class="bi bi-github"></i>Evelyn A.</a>
+                <a href="https://github.com/DbaE-Im" target="_blank"><i class="bi bi-github"></i>Daniel A.</a>
+            </nav>
+        </div>
+    </footer>
+
     <script src="/JS/scripts.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
