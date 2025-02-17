@@ -3,13 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/normalize.css">
-    <link rel="stylesheet" href="CSS/styles.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="CSS/normalize.css">
+    <link rel="stylesheet" href="CSS/styles.css">
     <title>Piedra, papel o tijera</title>
 </head>
 <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand">Piedra, Papel o Tijera</a>
+                <button class="btn btn-primary ms-auto">Mostrar Puntajes</button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="fixed-bottom d-flex justify-content-center pb-3">
+        <button id="piedra" class="btn btn-primary"><img src="Resources/piedra.png" alt="piedra"></button>
+        <button id="papel" class="btn btn-primary"><img src="Resources/mano.png" alt="papel"></button>
+        <button id="tijera" class="btn btn-primary"><img src="Resources/tijera.png" alt="tijera"></button>
+    </div>
 
     <script src="JS/scripts.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
