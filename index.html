@@ -7,26 +7,64 @@
     <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="CSS/normalize.css">
     <link rel="stylesheet" href="CSS/styles.css">
-    <title>Piedra, papel o tijera</title>
+    <title>Piedra, Papel o Tijera</title>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-            <div class="container-fluid">
-                <a class="navbar-brand">Piedra, Papel o Tijera</a>
-                <button class="btn btn-primary ms-auto">Mostrar Puntajes</button>
-            </div>
-        </nav>
-    </header>
 
-    <div class="fixed-bottom d-flex justify-content-center pb-3">
-        <button id="piedra" class="btn btn-primary"><img src="Resources/piedra.png" alt="piedra"></button>
-        <button id="papel" class="btn btn-primary"><img src="Resources/mano.png" alt="papel"></button>
-        <button id="tijera" class="btn btn-primary"><img src="Resources/tijera.png" alt="tijera"></button>
+    <!-- Modal de inicio -->
+    <div class="modal fade show" id="modalIniciar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalIniciarLabel" aria-hidden="true" style="display: block;">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white text-center d-flex justify-content-center">
+                    <h2 class="modal-title" id="modalIniciarLabel">Bienvenido a Piedra, Papel o Tijera</h2>
+                </div>
+                <div class="modal-body d-grid gap-2 mx-auto">
+                    <button type="button" class="btn btn-primary btn-lg" id="btnIniciarJuego">Iniciar Juego</button>
+                    <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modalPuntaje">Tabla de puntuación</button>
+                    <button type="button" class="btn btn-primary btn-lg" onclick="nombreJugador()">Insertar Nombre de Jugador</button>
+                    <div id="contenedorNombre" class="mt-2"></div> <!-- Se agrega un contenedor para el nombre -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido de la página -->
+    <div class="container-fluid d-flex justify-content-between align-items-center p-2 bg-light">
+        <h1 class="m-0">Piedra, Papel o Tijera</h1>
+        <button type="button" class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#modalPuntaje">Mostrar Puntaje</button>
+    </div>
+
+    <!-- Modal de puntaje -->
+    <div class="modal fade" id="modalPuntaje" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalPuntajeLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="modalPuntajeLabel">Puntajes</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-success table-bordered border-success">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Puntaje</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaPuntajes"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botones de juego -->
+    <div class="fixed-bottom pb-5 d-flex justify-content-center gap-5">
+        <button class="btn btn-primary" id="piedra"><img src="Resources/piedra.png" alt="piedra" width="200"></button>
+        <button class="btn btn-primary" id="papel"><img src="Resources/mano.png" alt="papel" width="200"></button>
+        <button class="btn btn-primary" id="tijera"><img src="Resources/tijera.png" alt="tijera" width="150"></button>
     </div>
 
     <script src="JS/scripts.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
 </body>
 </html>

@@ -1,25 +1,38 @@
+/* Estilos base */
 body {
-    font-family: JetBrains Mono, monospace; 
+    font-family: JetBrains Mono, monospace;
     background: #333333;
 }
 
+#modalIniciarLabel {
+    font-size: 30px;
+}
+
+h1 {
+    animation: moverTexto 20s infinite linear;
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 25px;
+}
+
+@keyframes moverTexto {
+    0% { transform: translateX(0); color: rgb(255, 0, 0); }
+    25% { transform: translateX(250%); color: rgb(61, 61, 61); }
+    50% { transform: translateX(0); color: rgb(0, 0, 255); }
+    75% { transform: translateX(250%); color: rgb(0, 0, 0); }
+    100% { transform: translateX(0); color: rgb(255, 0, 255); }
+}
+
 #piedra, #papel, #tijera {
-    width: 200px;  
+    width: 200px;
     height: 200px;
-    padding: 0;   
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 10%;
-    margin: 10px;
 }
 
-#piedra img, #papel img {
-    width: 200px;
-    height: 200px;
-}
-
-#tijera img {
-    width: 150px;
-    height: 150px;
+#piedra:hover, #papel:hover, #tijera:hover {
+    transform: scale3d(1.1, 1.1, 1.1);
 }
