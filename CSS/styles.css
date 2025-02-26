@@ -1,8 +1,15 @@
+
 body {
     font-family: JetBrains Mono, monospace; 
     background: #333333;
 }
-
+header{
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 1005;
+    height: 80px;
+}
 .header .marquee{
     width: 100%;
     font-size: 30px;
@@ -18,3 +25,4 @@ body {
     border-radius: 15%;
 
 }
+
