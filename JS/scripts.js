@@ -143,3 +143,5 @@ function mostrarElecciones(eleccionUsuario, eleccionComputadora) {
     }, 1000);
 }
 //--------contenedor de elecciones---------
+
+
