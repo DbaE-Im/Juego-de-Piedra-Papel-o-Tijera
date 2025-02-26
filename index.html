@@ -10,61 +10,87 @@
     <title>Piedra, Papel o Tijera</title>
 </head>
 <body>
-
     <!-- Modal de inicio -->
-    <div class="modal fade show" id="modalIniciar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalIniciarLabel" aria-hidden="true" style="display: block;">
+    <div class="modal fade" id="modalIniciar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalIniciarLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header bg-primary text-white text-center d-flex justify-content-center">
-                    <h2 class="modal-title" id="modalIniciarLabel">Bienvenido a Piedra, Papel o Tijera</h2>
+                    <h2 class="modal-title fw-bold" id="modalIniciarLabel">Bienvenido a Piedra, Papel o Tijera</h2>
                 </div>
                 <div class="modal-body d-grid gap-2 mx-auto">
-                    <button type="button" class="btn btn-primary btn-lg" id="btnIniciarJuego">Iniciar Juego</button>
-                    <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modalPuntaje">Tabla de puntuación</button>
-                    <button type="button" class="btn btn-primary btn-lg" onclick="nombreJugador()">Insertar Nombre de Jugador</button>
-                    <div id="contenedorNombre" class="mt-2"></div> <!-- Se agrega un contenedor para el nombre -->
+                    <button type="button" class="btn btn-primary btn-lg" id="btnIniciarJuego">Iniciar Juego<i class="bi bi-play-fill m-2"></i></button>
+                    <button type="button" class="btn btn-primary btn-lg" onclick="nombreJugador()">Ingrese su nombre de Jugador</button>
+                    <div id="contenedorNombre" class="mt-2"></div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Modal de inicio -->
 
-    <!-- Contenido de la página -->
-    <div class="container-fluid d-flex justify-content-between align-items-center p-2 bg-light">
-        <h1 class="m-0">Piedra, Papel o Tijera</h1>
-        <button type="button" class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#modalPuntaje">Mostrar Puntaje</button>
-    </div>
+    <!-- Header -->
+    <header class="container-fluid d-flex justify-content-between align-items-center px-3 bg-dark text-white">
+        <h1 class="fs-4 fw-bold">Piedra, Papel o Tijera</h1>
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalPuntaje">Mostrar puntaje</button>
+    </header>
+    <!-- Header -->
 
-    <!-- Modal de puntaje -->
+    <!-- Contenedor de puntaje -->
     <div class="modal fade" id="modalPuntaje" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalPuntajeLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2 class="modal-title fs-5" id="modalPuntajeLabel">Puntajes</h2>
+                    <h2 class="modal-title fs-5 fw-bold" id="modalPuntajeLabel">Puntajes</h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <table class="table table-success table-bordered border-success">
+                    <table class="table table-success table-bordered border-success text-center justify-content-center">
                         <thead>
-                            <tr>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Puntaje</th>
-                            </tr>
+                            <th class="fw-bold" scope="col">Nombre</th>
+                            <th class="fw-bold" scope="col">Puntaje</th>
                         </thead>
-                        <tbody id="tablaPuntajes"></tbody>
+                        <tbody id="tablaPuntajes">
+                        </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Contenedor de puntaje -->
+
+    <!-- Contenedor de elecciones -->
+    <div id="contenedorElecciones" class="d-flex justify-content-center gap-5 my-5">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body text-center">
+                <h5 class="card-title">Computadora</h5>
+                <div id="eleccionComputadora" class="card-text"></div>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body text-center">
+                <h5 class="card-title">Jugador</h5>
+                <div id="eleccionUsuario" class="card-text"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Contenedor de elecciones -->
 
     <!-- Botones de juego -->
     <div class="fixed-bottom pb-5 d-flex justify-content-center gap-5">
         <button class="btn btn-primary" id="piedra"><img src="Resources/piedra.png" alt="piedra" width="200"></button>
-        <button class="btn btn-primary" id="papel"><img src="Resources/mano.png" alt="papel" width="200"></button>
+        <button class="btn btn-primary" id="papel"><img src="Resources/papel.png" alt="papel" width="200"></button>
         <button class="btn btn-primary" id="tijera"><img src="Resources/tijera.png" alt="tijera" width="150"></button>
     </div>
+    <!-- Botones de juego -->
 
-    <script src="JS/scripts.js"></script>
+    <!-- Contador de puntaje -->
+    <div id="contadorPuntaje" class="fixed-bottom text-end pe-3 pb-2 fs-3 fw-bold text-white">Puntaje: 0</div>
+    <!-- Contador de puntaje -->
+
+    <!-- Nombre del jugador -->
+    <div id="nombreJugador" class="fixed-bottom text-start ps-3 pb-2 fs-3 fw-bold text-white">Jugador: </div>
+    <!-- Nombre del jugador -->
+
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/scripts.js"></script>
 </body>
 </html>

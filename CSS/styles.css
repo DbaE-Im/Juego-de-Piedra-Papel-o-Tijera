@@ -1,28 +1,11 @@
-/* Estilos base */
 body {
-    font-family: JetBrains Mono, monospace;
-    background: #333333;
+    font-family: 'JetBrains Mono', monospace;
+    margin: 0;
+    padding: 0;
+    background-image: url('../Resources/fondoJuego.jpg');
 }
 
-#modalIniciarLabel {
-    font-size: 30px;
-}
-
-h1 {
-    animation: moverTexto 20s infinite linear;
-    display: inline-block;
-    white-space: nowrap;
-    font-size: 25px;
-}
-
-@keyframes moverTexto {
-    0% { transform: translateX(0); color: rgb(255, 0, 0); }
-    25% { transform: translateX(250%); color: rgb(61, 61, 61); }
-    50% { transform: translateX(0); color: rgb(0, 0, 255); }
-    75% { transform: translateX(250%); color: rgb(0, 0, 0); }
-    100% { transform: translateX(0); color: rgb(255, 0, 255); }
-}
-
+/* Botones de juego */
 #piedra, #papel, #tijera {
     width: 200px;
     height: 200px;
@@ -35,4 +18,28 @@ h1 {
 
 #piedra:hover, #papel:hover, #tijera:hover {
     transform: scale3d(1.1, 1.1, 1.1);
+}
+
+/* Contenedor de elecciones */
+#contenedorElecciones {
+    display: none; /* Oculto por defecto */
+    z-index: 1000;
+    margin-top: 20px;
+}
+
+.card {
+    border-radius: 10%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: aparecer 0.5s ease-in-out;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
