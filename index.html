@@ -14,12 +14,12 @@
     <div class="modal fade" id="modalIniciar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalIniciarLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header bg-primary text-white text-center d-flex justify-content-center">
+                <div class="modal-header bg-danger text-white text-center d-flex justify-content-center">
                     <h2 class="modal-title fw-bold" id="modalIniciarLabel">Bienvenido a Piedra, Papel o Tijera</h2>
                 </div>
                 <div class="modal-body d-grid gap-2 mx-auto">
-                    <button type="button" class="btn btn-primary btn-lg" id="btnIniciarJuego">Iniciar Juego<i class="bi bi-play-fill m-2"></i></button>
-                    <button type="button" class="btn btn-primary btn-lg" onclick="nombreJugador()">Ingrese su nombre de Jugador</button>
+                    <button type="button" class="btn btn-outline-secondary btn-lg text-dark" id="btnIniciarJuego">Iniciar Juego<i class="bi bi-play-fill m-2"></i></button>
+                    <button type="button" class="btn btn-outline-secondary btn-lg text-dark" onclick="nombreJugador()">Ingrese su nombre de Jugador</button>
                     <div id="contenedorNombre" class="mt-2"></div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
 
     <!-- Header -->
     <header class="container-fluid d-flex justify-content-between align-items-center px-3 bg-dark text-white">
-        <h1 class="fs-4 fw-bold">Piedra, Papel o Tijera</h1>
+        <h1 id="tituloJuego" class="fs-4 fw-bold">Piedra, Papel o Tijera</h1>
         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalPuntaje">Mostrar puntaje</button>
     </header>
     <!-- Header -->
@@ -59,13 +59,13 @@
 
     <!-- Contenedor de elecciones -->
     <div id="contenedorElecciones" class="d-flex justify-content-center gap-5 my-5">
-        <div class="card" style="width: 18rem;">
+        <div class="card">
             <div class="card-body text-center">
                 <h5 class="card-title">Computadora</h5>
                 <div id="eleccionComputadora" class="card-text"></div>
             </div>
         </div>
-        <div class="card" style="width: 18rem;">
+        <div class="card">
             <div class="card-body text-center">
                 <h5 class="card-title">Jugador</h5>
                 <div id="eleccionUsuario" class="card-text"></div>
@@ -74,21 +74,40 @@
     </div>
     <!-- Contenedor de elecciones -->
 
+    <!-- Contenedor para mostrar el resultado del juego -->
+    <div id="resultadoJuego" class="text-center fs-3 fw-bold my-3"></div>
+    <!-- Contenedor para mostrar el resultado del juego -->
+
+    <!-- Modal para preguntar si desea continuar -->
+    <div class="modal fade" id="modalContinuar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalContinuarLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-warning text-dark">
+                    <h5 class="modal-title fw-bold" id="modalContinuarLabel">¿Deseas continuar jugando?</h5>
+                </div>
+                <div class="modal-body d-flex justify-content-center gap-3">
+                    <button type="button" class="btn btn-success" id="btnContinuarSi">Sí</button>
+                    <button type="button" class="btn btn-danger" id="btnContinuarNo">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal para preguntar si desea continuar -->
+
     <!-- Botones de juego -->
-    <div class="fixed-bottom pb-5 d-flex justify-content-center gap-5">
-        <button class="btn btn-primary" id="piedra"><img src="Resources/piedra.png" alt="piedra" width="200"></button>
-        <button class="btn btn-primary" id="papel"><img src="Resources/papel.png" alt="papel" width="200"></button>
-        <button class="btn btn-primary" id="tijera"><img src="Resources/tijera.png" alt="tijera" width="150"></button>
+    <div class="container-fluid fixed-bottom pb-5 d-flex justify-content-center gap-5">
+        <button class="btn btn btn-outline-success" id="piedra"><img src="Resources/piedra.png" alt="piedra" width="200"></button>
+        <button class="btn btn btn-outline-success" id="papel"><img src="Resources/papel.png" alt="papel" width="200"></button>
+        <button class="btn btn btn-outline-success" id="tijera"><img src="Resources/tijera.png" alt="tijera" width="150"></button>
     </div>
     <!-- Botones de juego -->
 
-    <!-- Contador de puntaje -->
-    <div id="contadorPuntaje" class="fixed-bottom text-end pe-3 pb-2 fs-3 fw-bold text-white">Puntaje: 0</div>
-    <!-- Contador de puntaje -->
-
-    <!-- Nombre del jugador -->
-    <div id="nombreJugador" class="fixed-bottom text-start ps-3 pb-2 fs-3 fw-bold text-white">Jugador: </div>
-    <!-- Nombre del jugador -->
+    <!-- Contenedor para el nombre del jugador y el contador de puntaje -->
+    <div class="container-fluid fixed-bottom d-flex justify-content-between align-items-center px-0 pb-2">
+        <div id="nombreJugador" class="fs-3 fw-bold">Jugador: </div>
+        <div id="contadorPuntaje" class="fs-3 fw-bold">Puntaje: 0</div>
+    </div>
+    <!-- Contenedor para el nombre del jugador y el contador de puntaje -->
 
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="JS/scripts.js"></script>
